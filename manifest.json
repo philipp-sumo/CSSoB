@@ -2,22 +2,22 @@
   "manifest_version": 2,
   "name": "Crash-Stats: State of the Bug",
   "description": "Checks the state of the bugs that are associated to crash signatures in crash-stats.mozilla.com top crasher lists and search results.",
-  "version": "0.2",
+  "version": "0.3",
   "permissions": [ "storage", "https://bugzilla.mozilla.org/rest/*", "https://product-details.mozilla.org/*" ],
   "background": {
 	  "scripts": ["jquery-3.4.1.min.js", "background.js"]
   },
   "content_scripts": [
     {
-      "matches": ["https://crash-stats.mozilla.com/topcrashers/*"],
+      "matches": ["https://crash-stats.mozilla.com/topcrashers/*", "https://crash-stats.mozilla.org/topcrashers/*"],
       "js": ["jquery-3.4.1.min.js", "bugstat.js", "topcrashers.js"]
     },
 	{
-      "matches": ["https://crash-stats.mozilla.com/search/*"],
+      "matches": ["https://crash-stats.mozilla.com/search/*", "https://crash-stats.mozilla.org/search/*"],
       "js": ["jquery-3.4.1.min.js", "bugstat.js", "socorro-search.js"]
     },
 	{
-      "matches": ["https://crash-stats.mozilla.com/signature/*"],
+      "matches": ["https://crash-stats.mozilla.com/signature/*", "https://crash-stats.mozilla.org/signature/*"],
       "js": ["jquery-3.4.1.min.js", "crashstop.js"]
     }
   ]
