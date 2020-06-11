@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Crash-Stats: State of the Bug",
   "description": "Checks the state of the bugs that are associated to crash signatures in crash-stats.mozilla.com top crasher lists and search results.",
-  "version": "0.3",
+  "version": "0.4",
   "permissions": [ "storage", "https://bugzilla.mozilla.org/rest/*", "https://product-details.mozilla.org/*" ],
   "background": {
 	  "scripts": ["jquery-3.4.1.min.js", "background.js"]
@@ -19,6 +19,10 @@
 	{
       "matches": ["https://crash-stats.mozilla.com/signature/*", "https://crash-stats.mozilla.org/signature/*"],
       "js": ["jquery-3.4.1.min.js", "crashstop.js"]
+    },
+	{
+      "matches": ["https://crash-stats.mozilla.com/report/*", "https://crash-stats.mozilla.org/report/*"],
+      "js": ["jquery-3.4.1.min.js", "stacklinks.js"]
     }
   ]
 }
